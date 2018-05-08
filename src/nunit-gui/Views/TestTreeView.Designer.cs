@@ -145,6 +145,7 @@
             this.treeImages.Images.SetKeyName(2, "Success.png");
             this.treeImages.Images.SetKeyName(3, "Warning.png");
             this.treeImages.Images.SetKeyName(4, "Failure.png");
+            this.treeImages.Images.SetKeyName(5, "Running.png");
             // 
             // toolStrip
             // 

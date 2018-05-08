@@ -51,6 +51,12 @@ namespace NUnit.Gui.Model
         /// <summary>
         /// The test failed
         /// </summary>
-        Failed
+        Failed,
+
+        /// <summary>
+        /// The is running
+        /// </summary>
+         
+        Running
     }
 }

@@ -87,8 +87,11 @@ namespace NUnit.Gui.Presenters
             _model.RunStarting += (ea) => InitializeRunCommands();
             _model.RunFinished += (ea) => InitializeRunCommands();
 
-            _model.TestFinished += (ea) => _strategy.OnTestFinished(ea.Result);
+            _model.SuiteStarting += (ea) => _strategy.OnTestStarted(ea.Test);
             _model.SuiteFinished += (ea) => _strategy.OnTestFinished(ea.Result);
+
+            _model.TestStarting += (ea) => _strategy.OnTestStarted(ea.Test);
+            _model.TestFinished += (ea) => _strategy.OnTestFinished(ea.Result);
 
             // View actions - Initial Load
             _view.Load += (s, e) =>

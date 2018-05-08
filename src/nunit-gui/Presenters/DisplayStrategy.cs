@@ -98,6 +98,13 @@ namespace NUnit.Gui.Presenters
                 Tree.SetImageIndex(treeNode, imageIndex);
         }
 
+        public void OnTestStarted(TestNode node)
+        {
+            int imageIndex = TestTreeView.RunningIndex;
+            foreach (TreeNode treeNode in GetTreeNodesForTest(node))
+                Tree.SetImageIndex(treeNode, imageIndex);
+        }
+
         // Called when either the display strategy or the grouping
         // changes. May need to distinguish these cases.
         public void Reload()
@@ -190,6 +197,8 @@ namespace NUnit.Gui.Presenters
                     return TestTreeView.FailureIndex;
                 case TestStatus.Warning:
                     return TestTreeView.WarningIndex;
+                case TestStatus.Running:
+                    return TestTreeView.RunningIndex;
                 case TestStatus.Skipped:
                 default:
                     return outcome.Label == "Ignored"

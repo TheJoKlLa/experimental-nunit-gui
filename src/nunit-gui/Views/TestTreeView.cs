@@ -41,6 +41,7 @@ namespace NUnit.Gui.Views
         public const int SuccessIndex = 2;
         public const int WarningIndex = 3;
         public const int FailureIndex = 4;
+        public const int RunningIndex = 5;
 
         public TestTreeView()
         {
